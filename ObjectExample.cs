@@ -1,0 +1,111 @@
+/*
+ Auther: John Blue
+ Time: 2022/5
+ Platform: VS2017
+ Object: to show basic usage of class and object
+
+ For class in C#:
+ The public modifier specifies that the members or classes can be accessed openly.
+ The private modifier specifies that the member can only be accessed in its own class.
+ The protected modifier specifies that the member can only be accessed within its own package (as with package-private) and, in addition, by a subclass of its class in another package.
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ObjectExample
+{
+    class Other
+    {
+        public static String name = "Other";
+    }
+
+    class ObjectExample
+    {
+        // variable
+        private string name;
+        private const string const_name = "s";// assign const variable here
+
+        // constructor
+        public ObjectExample(String s)
+        {
+            name = s;
+            //const_name = s;// cannot assign const variable
+        }
+        // copy constructor
+        public ObjectExample(ObjectExample obj) {// final is like a const
+            name = obj.name;
+            //const_name = obj.const_name;// cannot assign const variable
+        }
+    
+        // assigment operator not exsits !!!
+    
+        // other assignement operator
+        //public static ObjectExample operator +(const ObjectExample a, const ObjectExample b) { }
+
+        // function
+        public void print()
+        {
+            Console.WriteLine("object >>" + name);
+        }
+
+        static void Main(string[] args)
+        {
+            // o1 o2 are all reference that point to object
+            ObjectExample o1 = new ObjectExample("o1");
+            ObjectExample o2 = new ObjectExample("o2");
+            //o1 = o2;// workable o1 is just reference
+
+            // copy
+            Console.WriteLine("copy >>");
+            ObjectExample o3 = new ObjectExample(o1);
+            // by default
+            //        == compare reference
+            // .Equals() compare contents
+            // but we can override operators and functions
+            if (o1 == o3)
+            {
+                Console.WriteLine("o1 == o3");
+            }
+            else
+            {
+                Console.WriteLine("o1 != o3");
+                Console.WriteLine("but");
+                //if (o1.Equals(o3))
+                //{
+                    Console.Write("o1.print() =");
+                    o1.print();
+                    Console.Write("o3.print() =");
+                    o3.print();
+                    Console.WriteLine();
+                //}
+            }
+
+            // pt here is just reference, not assignment
+            Console.WriteLine("reference >>");
+            ObjectExample pt;
+            pt = o1;
+            pt.print();
+            pt = o2;
+            pt.print();
+            Console.WriteLine("\n");
+
+            // delete
+            Console.WriteLine("delete >>");
+            o1 = null;// the object that abandom by the reference will be delete automatically
+            GC.Collect();// Collect all generations of memory ... still have GC.Collect(1) GC.Collect(2) ... 
+            Console.WriteLine("complete >>\n");
+
+            // access static
+            Console.WriteLine("static variable >>");
+            Console.WriteLine("Other.name: " + Other.name);
+            
+            // end
+            Console.ReadKey();
+        }
+    }
+
+}
