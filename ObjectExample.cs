@@ -27,17 +27,20 @@ namespace ObjectExample
     {
         // variable
         private string name;
+        private int id;
         private const string const_name = "s";// assign const variable here
 
         // constructor
         public ObjectExample(String s)
         {
             name = s;
+            id = s.Length;
             //const_name = s;// cannot assign const variable
         }
         // copy constructor
         public ObjectExample(ObjectExample obj) {// final is like a const
             name = obj.name;
+            id = obj.id;
             //const_name = obj.const_name;// cannot assign const variable
         }
     
@@ -56,7 +59,7 @@ namespace ObjectExample
         {
             // o1 o2 are all reference that point to object
             ObjectExample o1 = new ObjectExample("o1");
-            ObjectExample o2 = new ObjectExample("o2");
+            ObjectExample o2 = new ObjectExample("oo2");
             //o1 = o2;// workable o1 is just reference
 
             // copy
@@ -66,7 +69,7 @@ namespace ObjectExample
             //        == compare reference
             // .Equals() compare contents
             // but we can override operators and functions
-            if (o1 == o3)
+            if (o1 == o3 && o1.Equals(o3))
             {
                 Console.WriteLine("o1 == o3");
             }
@@ -74,14 +77,11 @@ namespace ObjectExample
             {
                 Console.WriteLine("o1 != o3");
                 Console.WriteLine("but");
-                //if (o1.Equals(o3))
-                //{
                     Console.Write("o1.print() =");
                     o1.print();
                     Console.Write("o3.print() =");
                     o3.print();
                     Console.WriteLine();
-                //}
             }
 
             // pt here is just reference, not assignment
