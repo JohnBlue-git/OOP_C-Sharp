@@ -67,7 +67,8 @@ namespace ObjectExample
             ObjectExample o3 = new ObjectExample(o1);
             // by default
             //        == compare reference
-            // .Equals() compare contents
+            // .Equals() compare reference
+            // but string class is override with content comparision  
             // but we can override operators and functions
             if (o1 == o3 && o1.Equals(o3))
             {
