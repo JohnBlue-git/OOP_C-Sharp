@@ -47,7 +47,10 @@ namespace ObjectExample
         // assigment operator not exsits !!!
     
         // other assignement operator
-        //public static ObjectExample operator +(const ObjectExample a, const ObjectExample b) { }
+        //public static Box operator +(const Box a, const Box b) ...
+        // c = a + b
+        //public static bool operator ==(Box a, Box b) ...
+        // a == b
 
         // function
         public void print()
