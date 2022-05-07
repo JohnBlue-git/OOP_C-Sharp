@@ -28,7 +28,8 @@ namespace ObjectExample
         // variable
         private string name;
         private int id;
-        private const string const_name = "s";// assign const variable here
+        private const string const_name = "s";// can only assign at first place
+        //private readonly string read_name;// can only be assign or change in constructorgn const variable here
 
         // constructor
         public ObjectExample(String s)
