@@ -39,7 +39,10 @@ namespace ObjectExample
             //const_name = s;// cannot assign const variable
         }
         // copy constructor
-        public ObjectExample(ObjectExample obj) {// final is like a const
+        // 1. there is no const or final for passed object or value in C#
+        // 2. the variable is passed in value by default, but can use "ref": ObjectExample(ref string st)
+        //    and the reference variable such as Array and Object are passed in reference by default
+        public ObjectExample(ObjectExample obj) {
             name = obj.name;
             id = obj.id;
             //const_name = obj.const_name;// cannot assign const variable
