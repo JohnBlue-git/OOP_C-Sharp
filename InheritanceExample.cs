@@ -1,3 +1,20 @@
+/*
+Auther: John Blue
+Time: 2022/5
+Platform: VS2017
+Object: to show inheritance of class, how to upcast, down cast, determine which class the object belong
+
+
+Inheritance ::
+
+is a property to inheriant assets from base class
+is mecahnism to inheriant asset
+
+Override ::
+
+is a mechanism for a dirived class to redefine functions in base class to meet its own demand
+*/
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
