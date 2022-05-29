@@ -1,2 +1,2 @@
 # OOP_C-Sharp
-Basic usage and concepy of OOP in C#
+Basic usage and concept of OOP in C#
