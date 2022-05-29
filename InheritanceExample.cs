@@ -4,6 +4,9 @@ Time: 2022/5
 Platform: VS2017
 Object: to show inheritance of class, how to upcast, down cast, determine which class the object belong
 
+Inheritance of C# ::
+
+Public inheritance only
 
 Inheritance ::
 
